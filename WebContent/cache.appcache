@@ -1,0 +1,10 @@
+CACHE MANIFEST
+# version 1.0.1
+
+CACHE:
+/html5/refresh.png
+/html5/appcache.html
+/html5/index.html
+
+NETWORK:
+*
