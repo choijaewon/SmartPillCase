@@ -16,7 +16,9 @@ Ext.define('SmartPillCase.view.Home', {
         },
 
         html: [
-            "약 등록 버튼"
+            "<div>",
+            "등록",
+            "</div>"
         ].join("")
     },
 });
