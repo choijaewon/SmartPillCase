@@ -20,7 +20,7 @@ Ext.define('SmartPillCase.view.Setup', {
                     title: '전화번호 설정하기',
                     instructions: '알람 확인시 설정된 전화번호로 문자를 발송합니다.',
                     
-                    items: [   
+                    items: [    
                         {
                             xtype: 'textfield',
                             label: '전화번호',
