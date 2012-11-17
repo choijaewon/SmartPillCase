@@ -12,7 +12,7 @@ Ext.application({
         'Ext.MessageBox'
     ],
 
-    views: ['Main','List','Home','Setup'],
+    views: ['Main','List','Home','Setup', 'RootPanel'],
 
     icon: {
         '57': 'resources/icons/Icon.png',

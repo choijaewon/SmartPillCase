@@ -6,6 +6,7 @@ Ext.define('SmartPillCase.view.Home', {
 	    'Ext.form.Panel',
 	    'Ext.form.FieldSet',
     ],
+    
 	config: {
         title: '홈',
         iconCls: 'home',
@@ -20,15 +21,19 @@ Ext.define('SmartPillCase.view.Home', {
             title: '스마트약통'
          },
          {
-        	docked:'bottom',
-        	xtype:'button',
-        	text:'regist',
-        	width:'200px',
-        	buttonFn:function(){
-        		var tab = Ext.getCmp('regist_W');
-                tab.setActiveItem(0);
-        	}
-         }
+        	 	/*
+        	 xtype:'button',
+        	 ui:'normal',
+        	 text:'등록',
+        	 iconCls:'action',
+        	 iconMask:true,
+        	 handler:function(){
+        		 Ext.Msg.alert("Message ", "Hi--", Ext.emptyFn) ;
+        	 }
+        	 */
+        	 
+        	 
+		 }       
         ],
 
         html: [
