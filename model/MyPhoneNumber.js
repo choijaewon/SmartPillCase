@@ -24,4 +24,4 @@ Ext.define('SmartPillCase.model.MyPhoneNumber', {
             }
         ]
     }  
-});
+}); 
