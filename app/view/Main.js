@@ -9,10 +9,10 @@ Ext.define('SmartPillCase.view.Main', {
 
         items: [
 			{
-				xtype: 'listPanel'
+				xtype: 'homePanel'
 			},
 			{
-				xtype: 'homePanel'
+				xtype: 'listPanel'
 			},
 			{
 				xtype: 'setupPanel'
