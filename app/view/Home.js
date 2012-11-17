@@ -4,7 +4,7 @@ Ext.define('SmartPillCase.view.Home', {
 	requires:[
 	    'Ext.TitleBar',
 	    'Ext.form.Panel',
-	    'Ext.form.FieldSet',
+	    'Ext.form.FieldSet'
     ],
     
 	config: {
@@ -13,34 +13,51 @@ Ext.define('SmartPillCase.view.Home', {
 
         styleHtmlContent: true,
         scrollable: true,
-
-        items:[
-         {
-            docked: 'top',
-            xtype: 'titlebar',
-            title: '스마트약통'
-         },
-         {
-        	 	/*
-        	 xtype:'button',
-        	 ui:'normal',
-        	 text:'등록',
-        	 iconCls:'action',
-        	 iconMask:true,
-        	 handler:function(){
-        		 Ext.Msg.alert("Message ", "Hi--", Ext.emptyFn) ;
-        	 }
-        	 */
-        	 
-        	 
-		 }       
-        ],
-
-        html: [
-            "<div style='text-align:center;'>",
-            "등록",
-            "</div>"
-        ].join("")
+        
+        layout: "vbox",
+		items: [
+		     {
+				xtype: 'toolbar',
+				docked: "top",
+				
+				items: [ 
+					Ext.create("Ext.Button", {
+						text: "메인화면",
+						handler: function(btn, event) {
+							Ext.getCmp('cardPanel').setActiveItem(0);
+						}
+					}), 
+					Ext.create("Ext.Button", {
+						text: "메인등록화면",
+						handler: function(btn, event) {
+							Ext.getCmp('cardPanel').setActiveItem(1);
+						}
+					}),
+					Ext.create("Ext.Button", {
+						text: "메인보조화면",
+						handler: function(btn, event) {
+							Ext.getCmp('cardPanel').setActiveItem(2);
+						}
+					})
+				]
+			}, 
+			{
+				xtype:'panel',
+				id: 'cardPanel',
+				flex:1,
+				layout: "card",
+				items: [ 
+				  {
+					style: "background-color:#ff0000"
+				  }, 
+				  {
+					style: "background-color:#00ff00"
+				  }, 
+				  {
+					style: "background-color:#0000ff"
+				  } 
+				]
+			} 
+	  ]
     }
-    
 });

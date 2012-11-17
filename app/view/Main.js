@@ -16,9 +16,6 @@ Ext.define('SmartPillCase.view.Main', {
 			},
 			{
 				xtype: 'setupPanel'
-			}, 
-			{
-				xtype: 'rootpanel'
 			}
         ]
     }
