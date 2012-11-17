@@ -110,7 +110,7 @@ Ext.define('Ext.TitleBar', {
          * Style options for Toolbar. Either 'light' or 'dark'.
          * @accessor
          */
-        ui: 'dark',
+        ui: 'light',
 
         /**
          * @cfg {String} title

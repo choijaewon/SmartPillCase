@@ -24,27 +24,16 @@ Ext.define('SmartPillCase.view.Home', {
         	xtype:'button',
         	text:'regist',
         	width:'200px',
-        	
         	buttonFn:function(){
-        		Ext.Msg.alert('Message','success', function() {
-                    console.log('alert closed');
-                    var tab = Ext.getCmp('listPanel');
-                    tab.setActiveItem(1);
-            });
-
+        		var tab = Ext.getCmp('regist_W');
+                tab.setActiveItem(0);
         	}
-         },
-         {
-         	buttonFnn:function(){
-         		var tab = Ext.getCmp('regist_W');
-                 tab.setActiveItem(1);
-         	}
          }
         ],
 
         html: [
             "<div style='text-align:center;'>",
-            "<a href='javascript:buttonFnn();'>등록</a>",
+            "등록",
             "</div>"
         ].join("")
     }
