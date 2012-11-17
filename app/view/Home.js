@@ -4,49 +4,60 @@ Ext.define('SmartPillCase.view.Home', {
 	requires:[
 	    'Ext.TitleBar',
 	    'Ext.form.Panel',
-	    'Ext.form.FieldSet',
+	    'Ext.form.FieldSet'
     ],
+    
 	config: {
         title: '홈',
         iconCls: 'home',
 
         styleHtmlContent: true,
         scrollable: true,
-
-        items:[
-         {
-            docked: 'top',
-            xtype: 'titlebar',
-            title: '스마트약통'
-         },
-         {
-        	docked:'bottom',
-        	xtype:'button',
-        	text:'regist',
-        	width:'200px',
-        	
-        	buttonFn:function(){
-        		Ext.Msg.alert('Message','success', function() {
-                    console.log('alert closed');
-                    var tab = Ext.getCmp('listPanel');
-                    tab.setActiveItem(1);
-            });
-
-        	}
-         },
-         {
-         	buttonFnn:function(){
-         		var tab = Ext.getCmp('regist_W');
-                 tab.setActiveItem(1);
-         	}
-         }
-        ],
-
-        html: [
-            "<div style='text-align:center;'>",
-            "<a href='javascript:buttonFnn();'>등록</a>",
-            "</div>"
-        ].join("")
+        
+        layout: "vbox",
+		items: [
+		     {
+				xtype: 'toolbar',
+				docked: "top",
+				
+				items: [ 
+					Ext.create("Ext.Button", {
+						text: "메인화면",
+						handler: function(btn, event) {
+							Ext.getCmp('cardPanel').setActiveItem(0);
+						}
+					}), 
+					Ext.create("Ext.Button", {
+						text: "메인등록화면",
+						handler: function(btn, event) {
+							Ext.getCmp('cardPanel').setActiveItem(1);
+						}
+					}),
+					Ext.create("Ext.Button", {
+						text: "메인보조화면",
+						handler: function(btn, event) {
+							Ext.getCmp('cardPanel').setActiveItem(2);
+						}
+					})
+				]
+			}, 
+			{
+				xtype:'panel',
+				id: 'cardPanel',
+				flex:1,
+				layout: "card",
+				items: [ 
+				  {
+					style: "background-color:#ff0000"
+				  }, 
+				  {
+					style: "background-color:#00ff00"
+				  }, 
+				  {
+					style: "background-color:#0000ff"
+				  } 
+				]
+			} 
+	  ]
     }
-    
 });
