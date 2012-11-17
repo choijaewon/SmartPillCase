@@ -23,7 +23,7 @@ Ext.define('SmartPillCase.view.Setup', {
                     items: [    
                         {
                             xtype: 'textfield',
-                            label: '전화번호',
+                            label: '전화번호', 
                             name: 'phoneNumber',
                             id: 'phoneNumber',
                             value: window.localStorage.getItem('phoneNumber')
