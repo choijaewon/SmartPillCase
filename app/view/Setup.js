@@ -26,6 +26,7 @@ Ext.define('SmartPillCase.view.Setup', {
                             label: '전화번호', 
                             name: 'phoneNumber',
                             id: 'phoneNumber',
+                            placeHolder:'010-0000-0000',
                             value: window.localStorage.getItem('phoneNumber')
                         }
                     ]
@@ -47,8 +48,12 @@ Ext.define('SmartPillCase.view.Setup', {
     },
 
     onSetbuttonTap: function(button, e, options) {
-    	window.localStorage.setItem('phoneNumber', Ext.getCmp('phoneNumber')._value);
+    	
+    	window.localStorage.setItem('phoneNumber', Ext.getCmp('phoneNumber').getValue());
     	Ext.getCmp('phoneNumber')._value = window.localStorage.getItem('phoneNumber');
+    	//Ext.getStore('myPhone').add([{PhoneNum: Ext.getCmp('phoneNumber').getValue()}]);
+    	//Ext.getStore('myPhone').sync();
+		Ext.Msg.alert('설정되었습니다.');
     	
     }
 });
