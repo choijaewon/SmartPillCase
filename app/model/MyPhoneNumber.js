@@ -35,7 +35,7 @@ Ext.define('SmartPillCase.model.MyPhoneNumber', {
             initialData : [
                 {
                     id            : 1,
-                    PhoneNum          : ''
+                    PhoneNum          : '010-000-0000'
                 }
             ]
         },

@@ -14,8 +14,7 @@ Ext.define('SmartPillCase.view.Setup', {
                 {
                     xtype: 'titlebar',
                     docked: 'top',
-                    title: '스마트약통 설정',
-                    store   : 'phoneNumber'
+                    title: '스마트약통 설정'
                 },
                 {
                     xtype: 'fieldset',
@@ -28,7 +27,6 @@ Ext.define('SmartPillCase.view.Setup', {
                             label: '전화번호', 
                             name: 'phoneNumber',
                             id: 'phoneNumber',
-                            placeHolder:'010-0000-0000',
                             value: '{name}'
                         }
                     ]
@@ -56,7 +54,7 @@ Ext.define('SmartPillCase.view.Setup', {
     	//Ext.getStore('myPhone').add([{PhoneNum: Ext.getCmp('phoneNumber').getValue()}]);
     	//Ext.getStore('myPhone').sync();
 
-        var store = Ext.StoreMgr.lookup('phoneNumber'),
+        var store = Ext.Data.StoreMgr.lookup('phoneNumbers'),
             record = store.getAt(0)
 
         record.set('PhoneNum', Ext.getCmp('phoneNumber').getValue());

@@ -1,8 +1,8 @@
-Ext.define('SmartPillCase.store.Companies', {
+Ext.define('SmartPillCase.store.PhoneNumber', {
     extend : 'Ext.data.Store',
 
     config : {
-        storeId  : 'phoneNumber',
+        storeId  : 'phoneNumbers',
         autoLoad : true,
         model    : 'SmartPillCase.model.MyPhoneNumber'
     }
