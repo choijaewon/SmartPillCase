@@ -1,6 +1,10 @@
 Ext.define('SmartPillCase.view.Setup', {
 	extend: 'Ext.Panel',
-	extend: 'Ext.Container',
+
+    requires : [
+        'Ext.data.Store',
+        'Ext.data.Model'
+    ],
 	xtype: 'setupPanel',
 	
 	config: {
@@ -26,8 +30,9 @@ Ext.define('SmartPillCase.view.Setup', {
                             xtype: 'textfield',
                             label: '전화번호', 
                             name: 'phoneNumber',
+                            placeholder: '010-0000-0000',
                             id: 'phoneNumber',
-                            value: '{name}'
+                            value: ''
                         }
                     ]
                 },
@@ -48,19 +53,15 @@ Ext.define('SmartPillCase.view.Setup', {
     },
 
     onSetbuttonTap: function(button, e, options) {
-    	
-    	//window.localStorage.setItem('phoneNumber', Ext.getCmp('phoneNumber').getValue());
-    	//Ext.getCmp('phoneNumber')._value = window.localStorage.getItem('phoneNumber');
-    	//Ext.getStore('myPhone').add([{PhoneNum: Ext.getCmp('phoneNumber').getValue()}]);
-    	//Ext.getStore('myPhone').sync();
 
-        var store = Ext.Data.StoreMgr.lookup('phoneNumbers'),
-            record = store.getAt(0)
+        var store = Ext.StoreMgr.lookup('phoneNumbers');
+        var record = store.getAt(0);
 
         record.set('PhoneNum', Ext.getCmp('phoneNumber').getValue());
         store.sync();
 		Ext.Msg.alert('설정되었습니다.');
     	
-    }
+    } 
+   
 });
 

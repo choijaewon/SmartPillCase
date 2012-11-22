@@ -146,7 +146,7 @@ Ext.define('SmartPillCase.ux.WebSqlProxy', {
                     [],
                     Ext.bind(me.addInitialData, me), //on success
                     Ext.bind(me.onError, me));        // on error
-            }
+            };
             tx.executeSql('SELECT * FROM ' + me.getDbTable() + ' LIMIT 1', [], Ext.emptyFn, createTable);
 
         });
@@ -265,7 +265,7 @@ Ext.define('SmartPillCase.ux.WebSqlProxy', {
     getDataFromStore : function (store) {
         var data = [];
         store.each(function (item) {
-            data.push(item.data)
+            data.push(item.data);
         });
         return data;
     },

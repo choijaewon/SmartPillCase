@@ -9,7 +9,9 @@ Ext.application({
     name: 'SmartPillCase',
 
     requires: [
-        'Ext.MessageBox'
+        'Ext.MessageBox',
+        'Ext.data.Store',
+        'Ext.data.Model'
     ],
 
     views: ['Main','List','Home','Setup'],
@@ -40,6 +42,14 @@ Ext.application({
 
         // Initialize the main view
         Ext.Viewport.add(Ext.create('SmartPillCase.view.Main'));
+        
+        
+        var store = Ext.StoreMgr.lookup('phoneNumbers');
+        var record = store.getAt(0);
+        //var pn = record.get('PhoneNum');
+        
+        Ext.getCmp('phoneNumber').setValue("7878 ");
+        //Ext.getCmp('phoneNumber').setValue("7878 " + pn);
     },
 
     onUpdated: function() {
