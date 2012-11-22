@@ -14,19 +14,33 @@
  */
 
 Ext.define('SmartPillCase.model.MyPhoneNumber', {
-    extend: 'Ext.data.Model',
-    id: 'phoneModel',
-
-    requires: [
-        'Ext.data.proxy.SQL'
+    extend   : 'Ext.data.Model',
+    requires : [
+        'SmartPillCase.ux.WebSqlProxy'
     ],
-    
-    config: {
-        fields: [
-            {
-                name: 'PhoneNum',
-                type: 'string'
-            }
+    config   : {
+        proxy  : {
+            type        : 'websql',
+            dbName      : 'SmartPillCase',
+            dbTable     : 'PhoneNumber',
+            dbVersion   : '1.22',
+            writer      : {
+                type           : 'json',
+                writeAllFields : false
+            },
+            reader      : {
+                type       : 'json',
+                idProperty : 'id'
+            },
+            initialData : [
+                {
+                    id            : 1,
+                    PhoneNum          : ''
+                }
+            ]
+        },
+        fields : [
+            {name : 'PhoneNum', type : 'string'}
         ]
-    }  
-}); 
+    }
+});

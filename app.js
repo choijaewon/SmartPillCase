@@ -13,6 +13,8 @@ Ext.application({
     ],
 
     views: ['Main','List','Home','Setup'],
+    models      : ['MyPhoneNumber'],
+    stores      : ['PhoneNumber'],
 
     icon: {
         '57': 'resources/icons/Icon.png',

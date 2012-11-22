@@ -1,5 +1,6 @@
 Ext.define('SmartPillCase.view.Setup', {
 	extend: 'Ext.Panel',
+	extend: 'Ext.Container',
 	xtype: 'setupPanel',
 	
 	config: {
@@ -13,7 +14,8 @@ Ext.define('SmartPillCase.view.Setup', {
                 {
                     xtype: 'titlebar',
                     docked: 'top',
-                    title: '스마트약통 설정'
+                    title: '스마트약통 설정',
+                    store   : 'phoneNumber'
                 },
                 {
                     xtype: 'fieldset',
@@ -27,7 +29,7 @@ Ext.define('SmartPillCase.view.Setup', {
                             name: 'phoneNumber',
                             id: 'phoneNumber',
                             placeHolder:'010-0000-0000',
-                            value: window.localStorage.getItem('phoneNumber')
+                            value: '{name}'
                         }
                     ]
                 },
@@ -49,10 +51,16 @@ Ext.define('SmartPillCase.view.Setup', {
 
     onSetbuttonTap: function(button, e, options) {
     	
-    	window.localStorage.setItem('phoneNumber', Ext.getCmp('phoneNumber').getValue());
-    	Ext.getCmp('phoneNumber')._value = window.localStorage.getItem('phoneNumber');
+    	//window.localStorage.setItem('phoneNumber', Ext.getCmp('phoneNumber').getValue());
+    	//Ext.getCmp('phoneNumber')._value = window.localStorage.getItem('phoneNumber');
     	//Ext.getStore('myPhone').add([{PhoneNum: Ext.getCmp('phoneNumber').getValue()}]);
     	//Ext.getStore('myPhone').sync();
+
+        var store = Ext.StoreMgr.lookup('phoneNumber'),
+            record = store.getAt(0)
+
+        record.set('PhoneNum', Ext.getCmp('phoneNumber').getValue());
+        store.sync();
 		Ext.Msg.alert('설정되었습니다.');
     	
     }
