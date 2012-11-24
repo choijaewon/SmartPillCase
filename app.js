@@ -10,26 +10,15 @@ Ext.application({
 
     requires: [
         'Ext.MessageBox',
-<<<<<<< HEAD
-=======
         'Ext.data.Store',
         'Ext.data.Model',
->>>>>>> 8bd4e4d9c8b8783b7a0706c15bc43b293ae55b2e
         'Ext.picker.Picker'
     ],
     
     controllers : ['InsertFormController'],
 
-<<<<<<< HEAD
     models      : ['MyPhoneNumber','MyPill'],
     stores      : ['PhoneNumber','Pill'],
-=======
-    views: ['Main','List','Home','Setup'],
-    models      : ['MyPhoneNumber','MyPill'],
-    stores      : ['PhoneNumber','Pill'],
-    models      : ['MyPhoneNumber'],
-    stores      : ['PhoneNumber'],
->>>>>>> 8bd4e4d9c8b8783b7a0706c15bc43b293ae55b2e
     views: ['Main','List','Home','Setup','InsertForm','Yoil'],
 
     icon: {
