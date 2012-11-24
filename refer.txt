@@ -1,2 +1,8 @@
 센차터치 사용자 이미지 버튼 사용
  - http://mhrinc.tistory.com/127
+
+센차터치 select 스토어 연결 처리 참조
+http://blog.daum.net/sks7076/386
+
+센차터치2 버튼으로 뷰 바꾸기
+http://stackoverflow.com/questions/7883097/sencha-touch-2-mvc-how-to-switch-views-with-button

@@ -1,4 +1,5 @@
 Ext.define('SmartPillCase.view.Setup', {
+	
 	extend: 'Ext.Panel',
 
     requires : [
@@ -6,6 +7,7 @@ Ext.define('SmartPillCase.view.Setup', {
         'Ext.data.Model'
     ],
 	xtype: 'setupPanel',
+	
 	
 	config: {
         title: '설정',
@@ -31,8 +33,7 @@ Ext.define('SmartPillCase.view.Setup', {
                             label: '전화번호', 
                             name: 'phoneNumber',
                             placeholder: '010-0000-0000',
-                            id: 'phoneNumber',
-                            value: ''
+                            id: 'phoneNumber'
                         }
                     ]
                 },
@@ -61,7 +62,6 @@ Ext.define('SmartPillCase.view.Setup', {
         store.sync();
 		Ext.Msg.alert('설정되었습니다.');
     	
-    } 
-   
+    }
 });
 

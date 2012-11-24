@@ -41,15 +41,9 @@ Ext.application({
         Ext.fly('appLoadingIndicator').destroy();
 
         // Initialize the main view
-        Ext.Viewport.add(Ext.create('SmartPillCase.view.Main'));
+        Ext.Viewport.add(Ext.create('SmartPillCase.view.Main'));   
+        		
         
-        
-        var store = Ext.StoreMgr.lookup('phoneNumbers');
-        var record = store.getAt(0);
-        //var pn = record.get('PhoneNum');
-        
-        Ext.getCmp('phoneNumber').setValue("7878 ");
-        //Ext.getCmp('phoneNumber').setValue("7878 " + pn);
     },
 
     onUpdated: function() {
