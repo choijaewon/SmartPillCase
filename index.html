@@ -48,6 +48,29 @@
                 opacity: 0.8
             }
         }
+        
+        $rowHeight : 47px
+
+		timeList {
+		  height: $rowHeight * 5;
+		  width: 50px;
+		  margin: 0px 15px;
+		}
+		
+		.timeList-item {
+		  height: $rowHeight;
+		  background: -webkit-gradient(linear, 0 0, 0 100%, from(#a6a6a6), to(#878787));
+		  border-top: 1px solid $lightgrey;
+		}
+		
+		.timeList .x-inner { //allows values 0, 1, 8 and 9 to be selected too
+		  padding-top: $rowHeight * 2;
+		  padding-bottom: $rowHeight * 2;
+		}
+		
+		.timeList-item:last-child { //allows 9 to be selected
+		  height: $rowHeight+1;
+		}
     </style>
     <!-- The line below must be kept intact for Sencha Command to build your application -->
     <script id="microloader" type="text/javascript" src="touch/microloader/development.js"></script>

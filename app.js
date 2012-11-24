@@ -10,13 +10,23 @@ Ext.application({
 
     requires: [
         'Ext.MessageBox',
+<<<<<<< HEAD
         'Ext.data.Store',
         'Ext.data.Model'
+=======
+        'Ext.picker.Picker'
+>>>>>>> 등록페이지 수정
     ],
+    
+    controllers : ['InsertFormController'],
 
+<<<<<<< HEAD
     views: ['Main','List','Home','Setup'],
     models      : ['MyPhoneNumber'],
     stores      : ['PhoneNumber'],
+=======
+    views: ['Main','List','Home','Setup','InsertForm','Yoil'],
+>>>>>>> 등록페이지 수정
 
     icon: {
         '57': 'resources/icons/Icon.png',
@@ -41,9 +51,15 @@ Ext.application({
         Ext.fly('appLoadingIndicator').destroy();
 
         // Initialize the main view
+<<<<<<< HEAD
         Ext.Viewport.add(Ext.create('SmartPillCase.view.Main'));   
         		
         
+=======
+//        Ext.Viewport.add(Ext.create('SmartPillCase.view.Main'));
+        Ext.Viewport.add(Ext.create('SmartPillCase.view.InsertForm'));
+//        Ext.Viewport.add(Ext.create('SmartPillCase.view.Yoil'));
+>>>>>>> 등록페이지 수정
     },
 
     onUpdated: function() {
